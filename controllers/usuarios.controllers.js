@@ -2,7 +2,6 @@ import Usuario from '../models/esquemas/UsuarioEsquema.js';
 import bcrypt from 'bcrypt';
 import handleMongoId from '../utils/handle-mongo-id.js';
 
-
 const registrarUsuario = async (req, res) => {
   const { username, email, password } = req.body;
 
@@ -15,10 +14,10 @@ const registrarUsuario = async (req, res) => {
     });
 
     await nuevoUsuario.save();
-    res.status(201).json({usuario: handleMongoId(nuevoUsuario)});
+    res.status(201).json({ usuario: handleMongoId(nuevoUsuario) });
   } catch (error) {
     res.status(400).json({ ok: false, mensaje: error.message });
   }
 };
 
-export default registrarUsuario;
+export default registrarUsuario

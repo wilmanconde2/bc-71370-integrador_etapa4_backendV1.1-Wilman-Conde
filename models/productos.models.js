@@ -31,7 +31,6 @@ const obtenerProducto = async (id) => {
 };
 
 const actualizarProducto = async (id, productoActualizado, options) => {
-  // const options = {new: true}
   try {
     const productoEditado = await ProductoModelo.findByIdAndUpdate(id, productoActualizado, options);
     return productoEditado;
